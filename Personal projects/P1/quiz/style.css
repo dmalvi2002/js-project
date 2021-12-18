@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+#progress {
+  height: 30px;
+  width: 100%;
+}
+
+.main {
+  background-color: #3f3f3f;
+  color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+.main h2 {
+  font-size: 1.2rem;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.questions {
+  padding: 1rem;
+  text-align: center;
+}
+.options {
+  padding: 1rem;
+}
+.options .option {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.options .option:last-child {
+  margin-bottom: 0rem;
+}
+.options .option.active {
+  background-color: #cccccc;
+}
+.submit_btn {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submit {
+  font-family: inherit;
+  background-color: #ff3434;
+  color: #fff;
+}
+.submit:hover {
+  background-color: #dd2d2d;
+}
+button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 2rem;
+  border-radius: 3px;
+  background-color: #6eff34;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  font-family: inherit;
+}
+button:hover {
+  background-color: #4cb323;
+}
+button:active {
+  transform: scale(0.9);
+}
+.result {
+  display: flex;
+  padding: 1rem 2rem;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.again {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 2rem;
+  border-radius: 3px;
+  background-color: #34bfff;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s linear;
+}
+.again:hover {
+  background-color: #2da6dd;
+}
