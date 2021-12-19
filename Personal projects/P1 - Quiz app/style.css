@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 #progress {
@@ -101,4 +101,17 @@ button:active {
 }
 .again:hover {
   background-color: #2da6dd;
+}
+.alert {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 1rem 2rem;
+  max-width: 300px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  background-color: #7cd0f7;
+  transition: all 0.3s linear;
 }
