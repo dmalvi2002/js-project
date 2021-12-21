@@ -87,9 +87,9 @@ const data = [
     question: "What two things do you need to create webpages & view them?",
 
     a: "A text editor & a web browser",
-    b: "None of the above",
-    c: "A text editor & a compiler",
-    d: "A compiler & a web browser",
+    b: "A text editor & a compiler",
+    c: "A compiler & a web browser",
+    d: "None of the above",
 
     answer: "a",
   },
