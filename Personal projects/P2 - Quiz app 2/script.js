@@ -55,7 +55,7 @@ const data = [
     b: "line /",
     c: "bk /",
     d: "br /",
-    answer: 3,
+    answer: "d",
   },
   {
     question: "Where should a CSS file be referenced in a HTML file?",
@@ -65,7 +65,7 @@ const data = [
     c: "Inside the head section",
     d: "Inside the body section",
 
-    answer: 2,
+    answer: "c",
   },
   {
     question: "Inside the body section...",
@@ -73,7 +73,7 @@ const data = [
     b: "Text",
     c: "Information",
     d: "HTML",
-    answer: 2,
+    answer: "c",
   },
   {
     question: "What file extension should HTML files have?",
@@ -81,7 +81,7 @@ const data = [
     b: ".ht",
     c: ".page",
     d: ".php",
-    answer: 0,
+    answer: "a",
   },
   {
     question: "What two things do you need to create webpages & view them?",
@@ -91,7 +91,7 @@ const data = [
     c: "A text editor & a compiler",
     d: "A compiler & a web browser",
 
-    answer: 0,
+    answer: "a",
   },
   {
     question: "Which tag is the root tag in HTML?",
@@ -99,7 +99,7 @@ const data = [
     b: "< title >",
     c: "< html >",
     d: "< head >",
-    answer: 2,
+    answer: "c",
   },
 ];
 
