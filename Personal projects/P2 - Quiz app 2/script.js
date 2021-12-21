@@ -105,15 +105,16 @@ const data = [
 
 let currentQuiz = 0;
 let answer;
-
-answerEls.forEach((el) => {
-  el.addEventListener("click", () => {
-    answerEls.forEach((el) => {
-      el.classList.remove("grey");
-    });
-    el.classList.add("grey");
-    answer = el.id;
+function selectOption() {
+  answerEls.forEach((el) => {
+    el.classList.remove("grey");
   });
+  this.classList.add("grey");
+  answer = this.id;
+  wrong.style.display = "none";
+}
+answerEls.forEach((el) => {
+  el.addEventListener("click", selectOption);
 });
 
 function loadQuiz() {
@@ -128,9 +129,12 @@ function loadQuiz() {
 function getSelected() {
   if (answer === data[currentQuiz].answer) {
     checkBtn.style.display = "none";
-    nextBtn.style.display = "block";
     wrong.style.display = "none";
+    nextBtn.style.display = "block";
     correct.style.display = "block";
+    answerEls.forEach((el) => {
+      el.removeEventListener("click", selectOption);
+    });
   } else {
     wrong.style.display = "block";
   }
@@ -155,6 +159,9 @@ checkBtn.addEventListener("click", () => {
   getSelected();
 });
 nextBtn.addEventListener("click", () => {
+  answerEls.forEach((el) => {
+    el.addEventListener("click", selectOption);
+  });
   answerEls.forEach((el) => {
     el.classList.remove("grey");
     correct.style.display = "none";
