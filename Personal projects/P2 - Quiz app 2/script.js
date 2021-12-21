@@ -105,16 +105,16 @@ const data = [
 
 let currentQuiz = 0;
 let answer;
-const selectOption = () => {
+function selectOption() {
   answerEls.forEach((el) => {
     el.classList.remove("grey");
   });
   this.classList.add("grey");
   answer = this.id;
   wrong.style.display = "none";
-};
+}
 answerEls.forEach((el) => {
-  el.addEventListener("click", selectOption.bind(this));
+  el.addEventListener("click", selectOption);
 });
 
 function loadQuiz() {
@@ -133,7 +133,7 @@ function getSelected() {
     nextBtn.style.display = "block";
     correct.style.display = "block";
     answerEls.forEach((el) => {
-      el.removeEventListener("click", selectOption.bind(this));
+      el.removeEventListener("click", selectOption);
     });
   } else {
     wrong.style.display = "block";
@@ -160,7 +160,7 @@ checkBtn.addEventListener("click", () => {
 });
 nextBtn.addEventListener("click", () => {
   answerEls.forEach((el) => {
-    el.addEventListener("click", selectOption.bind(this));
+    el.addEventListener("click", selectOption);
   });
   answerEls.forEach((el) => {
     el.classList.remove("grey");
