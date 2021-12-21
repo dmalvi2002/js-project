@@ -17,7 +17,7 @@
       <div class="quiz-help">
         <div class="quiz-help_btn">
           <button class="btn help">Help</button>
-          <button class="btn quit">Quit</button>
+          <button class="btn quit">Restart</button>
         </div>
         <div class="help-content">
           <p>
@@ -34,35 +34,35 @@
         <div class="quiz-header">
           <h2 class="question">Question text</h2>
           <ul>
-            <li>
+            <li id="a">
               A.
-              <input type="radio" name="answer" id="a" class="answer" />
-              <label for="a" id="a_text">Question</label>
+              <p class="answer" id="a_text">Question</p>
             </li>
 
-            <li>
+            <li id="b">
               B.
-              <input type="radio" name="answer" id="b" class="answer" />
-              <label for="b" id="b_text">Question</label>
+              <p class="answer" id="b_text">Question</p>
             </li>
 
-            <li>
+            <li id="c">
               C.
-              <input type="radio" name="answer" id="c" class="answer" />
-              <label for="c" id="c_text">Question</label>
+              <p class="answer" id="c_text">Question</p>
             </li>
 
-            <li>
+            <li id="d">
               D.
-              <input type="radio" name="answer" id="d" class="answer" />
-              <label for="d" id="d_text">Question</label>
+              <p class="answer" id="d_text">Question</p>
             </li>
           </ul>
         </div>
+        <h3 class="text wrong">You've chosen a wrong answer</h3>
+        <h3 class="text correct">Correct answer!</h3>
+        <button class="btn check">Check</button>
+        <button class="btn next">Next</button>
       </div>
       <div class="quiz-begin">
         <h1 class="begin-title">
-          When you are ready click on 'Begin Quiz' to begin the quiz
+          When you are ready click on 'Begin' to begin the quiz
         </h1>
         <button class="btn begin">Begin</button>
       </div>

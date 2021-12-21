@@ -46,8 +46,9 @@ body {
 .help-content {
   display: none;
 }
-.help-content.active {
-  display: block;
+.quiz-container {
+  display: none;
+  padding: 1rem;
 }
 .btn {
   height: 3rem;
@@ -67,8 +68,40 @@ ul li {
   list-style-type: none;
   font-size: 22px;
   margin-bottom: 0.5rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+ul li:last-child {
+  margin-bottom: 1rem;
 }
 .question {
   margin: 1rem;
   text-align: justify;
+}
+.answer {
+  display: inline-block;
+}
+.grey {
+  background-color: rgba(0, 0, 0, 0.152);
+}
+.next {
+  display: none;
+}
+.wrong {
+  color: red;
+  display: none;
+}
+.correct {
+  display: none;
+  color: rgb(0, 179, 0);
+}
+.count {
+  display: none;
+}
+.active {
+  display: block;
+}
+.text {
+  margin-bottom: 1rem;
 }
