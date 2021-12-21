@@ -8,7 +8,7 @@ const alertPop = document.querySelector(".alert");
 
 const data = [
   {
-    q: "What is the predominant markup language for web pages?",
+    q: "What is the most popular language for web pages?",
     options: ["JavaScript", "Python", "C", "Ruby"],
     a: 0,
   },

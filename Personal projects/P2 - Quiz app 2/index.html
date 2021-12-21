@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz app 2</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <section class="quiz">
+      <div class="quiz-title">
+        <h1 class="name">QUIZ</h1>
+        <h1 class="count">0/10</h1>
+      </div>
+      <div class="quiz-help">
+        <div class="quiz-help_btn">
+          <button class="btn help">Help</button>
+          <button class="btn quit">Quit</button>
+        </div>
+        <div class="help-content">
+          <p>
+            The quiz consists of mostly multiple choice questions and a few
+            true/false questions. You will be informed if you chose the right
+            answer after answering each question together with an explanation
+            for the right answer to the question (if you got it wrong). At the
+            end of the quiz you will get a total score and you can review all
+            your answers as well.
+          </p>
+        </div>
+      </div>
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h2 class="question">Question text</h2>
+          <ul>
+            <li>
+              A.
+              <input type="radio" name="answer" id="a" class="answer" />
+              <label for="a" id="a_text">Question</label>
+            </li>
+
+            <li>
+              B.
+              <input type="radio" name="answer" id="b" class="answer" />
+              <label for="b" id="b_text">Question</label>
+            </li>
+
+            <li>
+              C.
+              <input type="radio" name="answer" id="c" class="answer" />
+              <label for="c" id="c_text">Question</label>
+            </li>
+
+            <li>
+              D.
+              <input type="radio" name="answer" id="d" class="answer" />
+              <label for="d" id="d_text">Question</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="quiz-begin">
+        <h1 class="begin-title">
+          When you are ready click on 'Begin Quiz' to begin the quiz
+        </h1>
+        <button class="btn begin">Begin</button>
+      </div>
+    </section>
+  </body>
+</html>
