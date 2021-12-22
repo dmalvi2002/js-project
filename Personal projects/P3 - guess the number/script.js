@@ -7,21 +7,21 @@
  * DONE: Complete the showYouWon, showNumberAbove, showNumberBelow
  * DONE: Use the showYouWon... functions within displayResult to display the correct dialog
  * DONE: Save the guess history in a variable called guess
- * TODO: Display the guess history using displayHistory() function
- * TODO: Use the initGame() function to restart the game
+ * DONE: Display the guess history using displayHistory() function
+ * DONE: Use the initGame() function to restart the game
  */
 
 // Variable to store the list of guesses
-const numberGuess = document.querySelector('.form-control');
+const numberGuess = document.querySelector(".form-control");
 let guesses = [];
 
 // Variable for store the correct random number
-const correctNumber = Number.parseInt(Math.random() * 100);
+let correctNumber = getRandomNumber();
 console.log(correctNumber);
 
 window.onload = function () {
-  document.getElementById('number-submit').addEventListener('click', playGame);
-  document.getElementById('restart-game').addEventListener('click', initGame);
+  document.getElementById("number-submit").addEventListener("click", playGame);
+  document.getElementById("restart-game").addEventListener("click", initGame);
 };
 
 /**
@@ -56,22 +56,23 @@ function displayResult(value) {
  * HINT: reset the correctNumber, guesses, and HTML content
  */
 function initGame() {
-  // *CODE GOES BELOW HERE *
+  numberGuess.value = "";
+  guesses = [];
+  correctNumber = getRandomNumber();
+  document.getElementById("history").innerHTML = "";
+  displayHistory();
+  console.log(correctNumber);
+}
+
+function getRandomNumber() {
+  return Number.parseInt(Math.random() * 100);
 }
 
 /**
  * Reset the HTML content for guess history
  */
 function resetResultContent() {
-  document.getElementById('result').innerHTML = '';
-}
-
-/**
- * Return a random number between 1 and 100
- * HINT: Use Math.random
- */
-function getRandomNumber() {
-  // *CODE GOES BELOW HERE *
+  document.getElementById("result").innerHTML = "";
 }
 
 /**
@@ -100,11 +101,11 @@ function displayHistory() {
     list +=
       "<li class='list-group-item'>" +
       `You guessed ${guesses[index]}` +
-      '</li>';
+      "</li>";
     index++;
   }
-  list += '</ul>';
-  document.getElementById('history').innerHTML = list;
+  list += "</ul>";
+  document.getElementById("history").innerHTML = list;
 }
 
 /**
@@ -113,50 +114,50 @@ function displayHistory() {
 function getDialog(dialogType, text) {
   let dialog;
   switch (dialogType) {
-    case 'warning':
+    case "warning":
       dialog = "<div class='alert alert-warning' role='alert'>";
       break;
-    case 'won':
+    case "won":
       dialog = "<div class='alert alert-success' role='alert'>";
       break;
   }
   dialog += text;
-  dialog += '</div>';
+  dialog += "</div>";
   return dialog;
 }
 
 function showYouWon() {
-  const text = 'Awesome job, you got it!';
+  const text = "Awesome job, you got it!";
   /**
    * Retrieve the dialog using the getDialog() function
    * and save it to variable called dialog
    * HINT: Use the 'won' and text parameters
    */
   // *CODE GOES BELOW HERE *
-  let dialog = getDialog('won', text);
-  document.getElementById('result').innerHTML = dialog;
+  let dialog = getDialog("won", text);
+  document.getElementById("result").innerHTML = dialog;
 }
 
 function showNumberAbove() {
-  const text = 'Your guess is too high!';
+  const text = "Your guess is too high!";
   /**
    * Retrieve the dialog using the getDialog() function
    * and save it to variable called dialog
    * HINT: Use the 'warning' and text parameters
    */
   // *CODE GOES BELOW HERE *
-  let dialog = getDialog('warning', text);
-  document.getElementById('result').innerHTML = dialog;
+  let dialog = getDialog("warning", text);
+  document.getElementById("result").innerHTML = dialog;
 }
 
 function showNumberBelow() {
-  const text = 'Your guess is too low!';
+  const text = "Your guess is too low!";
   /**
    * Retrieve the dialog using the getDialog() function
    * and save it to variable called dialog
    * HINT: Use the 'warning' and text parameters
    */
   // *CODE GOES BELOW HERE *
-  let dialog = getDialog('warning', text);
-  document.getElementById('result').innerHTML = dialog;
+  let dialog = getDialog("warning", text);
+  document.getElementById("result").innerHTML = dialog;
 }
