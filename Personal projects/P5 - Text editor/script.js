@@ -1,13 +1,24 @@
 /**
  * DONE: Update the text in the "Formatted Text" section as a user types in the textarea
- * TODO TOGETHER: Add a .bold, .italic classes to "Formatted Text" when the appropriate button is clicked
+ * DONE: Add a .bold, .italic classes to "Formatted Text" when the appropriate button is clicked
  * TODO: Add an .underline class to "Formatted Text" when Underline button is clicked
  * TODO: Toggle the align style for "Formatted Text" when the appropriate button is clicked
  */
-
+// Selectors
 const textInput = document.getElementById("text-input");
 const textOutput = document.getElementById("text-output");
+const btnBold = document.getElementById("bold");
+const btnItalic = document.getElementById("italic");
+const btnUnderline = document.getElementById("underline");
+const btnLeft = document.getElementById("left-align");
+const btnCenter = document.getElementById("center-align");
+const btnRight = document.getElementById("right-align");
+
+// Event listeners
 textInput.addEventListener("input", updateText);
+btnBold.addEventListener("click", makeBold);
+btnItalic.addEventListener("click", makeItalic);
+// btnBold.addEventListener("click", makeBold);
 /**
  * Update the output text as a user types in the textarea
  * HINT: Use the onkeydown function inside HTML
@@ -24,14 +35,18 @@ function updateText() {
  * HINT: Use the classList property
  * HINT: Toggle .active class for the button
  */
-function makeBold(elem) {
-  //CODE GOES HERE
+function makeBold() {
+  textOutput.classList.toggle("bold");
+  btnBold.classList.toggle("active");
 }
 
 /**
  * Toggle the italic class for the output text
  */
-function makeItalic(elem) {}
+function makeItalic() {
+  textOutput.classList.toggle("italic");
+  btnItalic.classList.toggle("active");
+}
 
 /**
  * Toggle the underline class for the output text
