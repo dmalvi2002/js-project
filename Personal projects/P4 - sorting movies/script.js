@@ -103,13 +103,6 @@ function sortMoviesByAttr(movies, sortAttr) {
     let max_obj = max.max_obj;
     let max_location = max.max_index;
 
-    // for (let i = j; i < movies.length; i++) {
-    //   if (movies[i][sortAttr] > max_obj[sortAttr]) {
-    //     // Know max AND it's index (location)
-    //     max_obj = movies[i];
-    //     max_location = i;
-    //   }
-    // }
     // swap the first and the last
     movies[max_location] = movies[j]; // --> 10
     movies[j] = max_obj;

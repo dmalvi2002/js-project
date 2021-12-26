@@ -112,6 +112,7 @@ function selectOption() {
   this.classList.add("grey");
   answer = this.id;
   wrong.style.display = "none";
+  console.log(this);
 }
 answerEls.forEach((el) => {
   el.addEventListener("click", selectOption);
