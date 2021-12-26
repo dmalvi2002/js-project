@@ -1,7 +1,7 @@
 /**
  * DONE: Update the text in the "Formatted Text" section as a user types in the textarea
  * DONE: Add a .bold, .italic classes to "Formatted Text" when the appropriate button is clicked
- * TODO: Add an .underline class to "Formatted Text" when Underline button is clicked
+ * DONE: Add an .underline class to "Formatted Text" when Underline button is clicked
  * TODO: Toggle the align style for "Formatted Text" when the appropriate button is clicked
  */
 // Selectors
@@ -18,7 +18,7 @@ const btnRight = document.getElementById("right-align");
 textInput.addEventListener("input", updateText);
 btnBold.addEventListener("click", makeBold);
 btnItalic.addEventListener("click", makeItalic);
-// btnBold.addEventListener("click", makeBold);
+btnUnderline.addEventListener("click", makeUnderline);
 /**
  * Update the output text as a user types in the textarea
  * HINT: Use the onkeydown function inside HTML
@@ -54,8 +54,10 @@ function makeItalic() {
  * HINT: Use the classList property
  * HINT: Use contains, remove, and add functions
  */
-function makeUnderline(elem) {
+function makeUnderline() {
   //CODE GOES HERE
+  textOutput.classList.toggle("underline");
+  btnUnderline.classList.toggle("active");
 }
 
 /**
