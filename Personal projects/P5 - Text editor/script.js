@@ -19,6 +19,9 @@ textInput.addEventListener("input", updateText);
 btnBold.addEventListener("click", makeBold);
 btnItalic.addEventListener("click", makeItalic);
 btnUnderline.addEventListener("click", makeUnderline);
+btnLeft.addEventListener("click", alignText);
+btnCenter.addEventListener("click", alignText);
+btnRight.addEventListener("click", alignText);
 /**
  * Update the output text as a user types in the textarea
  * HINT: Use the onkeydown function inside HTML
@@ -66,6 +69,24 @@ function makeUnderline() {
  * HINT: Use the style property of the element
  * HINT: Make sure to untoggle the active state for all other align buttons
  */
-function alignText(elem, alignType) {
+function alignText() {
   // CODE GOES HERE
+  if (this.id == "left-align") {
+    btnRight.classList.remove("active");
+    btnCenter.classList.remove("active");
+    btnLeft.classList.toggle("active");
+    textOutput.style.textAlign = "left";
+  }
+  if (this.id == "center-align") {
+    btnLeft.classList.remove("active");
+    btnRight.classList.remove("active");
+    btnCenter.classList.toggle("active");
+    textOutput.style.textAlign = "center";
+  }
+  if (this.id == "right-align") {
+    btnLeft.classList.remove("active");
+    btnCenter.classList.remove("active");
+    btnRight.classList.toggle("active");
+    textOutput.style.textAlign = "right";
+  }
 }
