@@ -1,7 +1,7 @@
 /**
  * Weather App
  * DONE: Complete getWeatherData() to return json response Promise
- * TODO: Complete searchCity() to get user input and get data using getWeatherData()
+ * DONE: Complete searchCity() to get user input and get data using getWeatherData()
  * TODO: Complete showWeatherData() to set the data in the the html file from response
  */
 
@@ -14,17 +14,15 @@ let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
  * HINT: URL should look like this:
  * https://api.openweathermap.org/data/2.5/weather?q=detroit&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial
  */
+let data;
 getWeatherData = (city) => {
-  const URL = `https://api.openweathermap.org/data/2.5/weather?q=detroit&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial`;
+  const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a8e71c9932b20c4ceb0aed183e6a83bb&units=imperial`;
   //HINT: Use template literals to create a url with input and an API key
-
   //CODE GOES HERE
   fetch(URL)
     .then((res) => res.json())
-    .then((data) => console.log(data));
+    .then((d) => (data = d));
 };
-getWeatherData();
-
 /**
  * Retrieve city input and get the weather data
  * HINT: Use the promise returned from getWeatherData()
@@ -32,6 +30,7 @@ getWeatherData();
 searchCity = () => {
   const city = document.getElementById("city-input").value;
   // CODE GOES HERE
+  getWeatherData(city);
 };
 
 /**
