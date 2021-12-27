@@ -2,8 +2,15 @@
  * Weather App
  * DONE: Complete getWeatherData() to return json response Promise
  * DONE: Complete searchCity() to get user input and get data using getWeatherData()
- * TODO: Complete showWeatherData() to set the data in the the html file from response
+ * DONE: Complete showWeatherData() to set the data in the the html file from response
  */
+
+// Selectors
+const cityName = document.getElementById("city-name");
+const weatherType = document.getElementById("weather-type");
+const temperature = document.getElementById("temp");
+const minTemp = document.getElementById("min-temp");
+const maxTemp = document.getElementById("max-temp");
 
 // API_KEY for maps api
 let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
@@ -21,7 +28,11 @@ getWeatherData = (city) => {
   //CODE GOES HERE
   fetch(URL)
     .then((res) => res.json())
-    .then((d) => (data = d));
+    .then((d) => {
+      data = d;
+      console.log(data);
+      showWeatherData(data);
+    });
 };
 /**
  * Retrieve city input and get the weather data
@@ -39,4 +50,12 @@ searchCity = () => {
  */
 showWeatherData = (weatherData) => {
   //CODE GOES HERE
+  let temp = weatherData.main;
+  let type = weatherData.weather[0];
+  console.log(temp);
+  cityName.innerText = weatherData.name;
+  weatherType.innerText = type.main;
+  temperature.innerText = temp.temp;
+  minTemp.innerText = temp.temp_min;
+  maxTemp.innerText = temp.temp_max;
 };
