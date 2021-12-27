@@ -4,7 +4,13 @@
  * HINT: Create a play function to play the audio if called
  */
 class Beat {
-  constructor(audioSrc) {}
+  constructor(audioSrc) {
+    this.audio = new Audio(audioSrc);
+  }
+  play = () => {
+    this.audio.currentTime = 0;
+    this.audio.play();
+  };
 }
 
 /**
