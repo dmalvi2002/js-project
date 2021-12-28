@@ -53,6 +53,7 @@ let beats = {
     button: new Button("#FFFFFF", 76),
   },
 };
+console.log(beats["76"].button);
 
 /**
  * Function to play the beat upon a press of key
