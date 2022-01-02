@@ -124,7 +124,6 @@ a:visited {
   gap: 0.5rem 2.5rem;
 
   /* Match height and activity boxes */
-  height: 9.25rem;
   transition: all 0.5s, transform 1ms;
 }
 
@@ -166,9 +165,32 @@ a:visited {
   outline: none;
   background-color: #fff;
 }
+.form__btn-container {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
 
 .form__btn {
-  display: none;
+  width: 40%;
+  border: 3px solid var(--color-brand--2);
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  background-color: var(--color-dark--2);
+  color: #fff;
+  transition: background-color 0.2s linear;
+}
+
+.form__btn:hover {
+  background-color: var(--color-dark--1);
+}
+
+.form__btn:active {
+  transform: scale(0.9);
 }
 
 .copyright {
