@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joke teller</title>
+    <title>Joke Teller</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="style.css" />
-    <!-- Script -->
-    <script
-      src="https://kit.fontawesome.com/72a7723c38.js"
-      crossorigin="anonymous"
-    ></script>
-    <script defer src="script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <button id="button">Tell Me A Joke</button>
+      <audio id="audio" controls hidden></audio>
+    </div>
+    <!-- Script -->
+    <script src="voiceRSS.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
