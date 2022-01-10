@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+#flipbook {
+  height: 100%;
+  width: 100%;
+}
+#flipbook .page {
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+}
+#flipbook .p2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+#flipbook .p2 h1 {
+  opacity: 0.3;
+  animation: slide1 0.5s linear 1;
+}
+#flipbook .p3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+#flipbook .p3 h1 {
+  opacity: 0.3;
+  animation: slide2 0.5s linear 1;
+}
+.screen {
+  height: 100vh;
+  width: 100vw;
+  border: none;
+}
+.hidden {
+  display: none;
+}
+.btn-1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+.btn-2 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-100%), translateY(-100%);
+}
+
+@keyframes slide1 {
+  0% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide2 {
+  0% {
+    transform: translateX(300%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
