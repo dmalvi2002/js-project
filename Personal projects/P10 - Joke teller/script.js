@@ -1,5 +1,7 @@
 const jokeBtn = document.getElementById('button');
 const audioElement = document.getElementById('audio');
+const progress = document.querySelector('.progress');
+const progressBar = document.querySelector('.progress-bar');
 
 // prettier-ignore
 // VoiceRSS Javascript SDK
@@ -12,6 +14,8 @@ function toggleBtn() {
 
 // Passing joke to voice api
 function tellMe(joke) {
+  progress.style.display = 'block';
+  progressBar.style.width = '0%';
   VoiceRSS.speech({
     key: '8837f6330d9d4a72ac99ca2f1b1d9279',
     src: joke,
@@ -46,4 +50,13 @@ async function getJokes() {
 
 // Event listeners
 jokeBtn.addEventListener('click', getJokes);
-audioElement.addEventListener('ended', toggleBtn);
+audioElement.addEventListener('timeupdate', function () {
+  progressBar.style.width = `${
+    (audioElement.currentTime / audioElement.duration) * 100
+  }%`;
+  console.log(audioElement.duration);
+});
+audioElement.addEventListener('ended', function () {
+  toggleBtn();
+  progress.style.display = 'none';
+});
