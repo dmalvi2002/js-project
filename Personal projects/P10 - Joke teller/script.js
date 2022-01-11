@@ -17,7 +17,10 @@ function test() {
     ssml: false,
   });
 }
-// test();
+// Passing joke to voice api
+function tellMe(joke) {
+  console.log(joke);
+}
 
 // Get jokes from joke API
 async function getJokes() {
@@ -32,7 +35,7 @@ async function getJokes() {
     } else {
       joke = data.joke;
     }
-    console.log(joke);
+    tellMe(joke);
   } catch (error) {
     console.error('whoops!', error);
   }
