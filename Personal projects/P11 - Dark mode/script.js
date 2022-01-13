@@ -7,9 +7,10 @@ const image3 = document.getElementById("image3");
 const textBox = document.getElementById("text-box");
 
 let check = JSON.parse(localStorage.getItem("dark"));
+toggleSwitch.checked = check ? true : false;
 switchTheme(check);
+
 function switchTheme(check) {
-  toggleSwitch.checked = check ? true : false;
   check
     ? document.documentElement.setAttribute("data-theme", "dark")
     : document.documentElement.setAttribute("data-theme", "light");
