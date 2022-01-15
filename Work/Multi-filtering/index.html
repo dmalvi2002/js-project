@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <script
+      src="https://kit.fontawesome.com/f8aa4258e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="loader_container">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+    <div class="conatainer">
+      <div class="style_box"></div>
+      <div class="filters_container">
+        <div class="filters_inner">
+          <!-- Filter -->
+          <div class="filter_container">
+            <div class="fitler_title">
+              <h2>Year</h2>
+            </div>
+            <div class="fitler_btns filter_year">
+              <button class="active year_all">All</button>
+            </div>
+          </div>
+          <!-- Filter -->
+
+          <!-- Filter -->
+          <div class="filter_container">
+            <div class="fitler_title">
+              <h2>Furniture Type</h2>
+            </div>
+            <div class="fitler_btns filter_furniture">
+              <button class="active furniture_all">All</button>
+            </div>
+          </div>
+          <!-- Filter -->
+
+          <!-- Filter -->
+          <div class="filter_container filter_vendors_container">
+            <div class="fitler_title">
+              <h2>Vendor</h2>
+            </div>
+            <div class="fitler_btns filter_vendor">
+              <button class="active vendor_all">All</button>
+            </div>
+          </div>
+          <!-- Filter -->
+
+          <!-- Filter -->
+          <div class="filter_container">
+            <div class="fitler_title">
+              <h2>Sort By</h2>
+            </div>
+            <div class="fitler_btns">
+              <button class="remove_sort_btn">Remove</button>
+              <button class="date_btn">Release Date</button>
+              <button class="title_btn">Title</button>
+            </div>
+          </div>
+          <!-- Filter -->
+        </div>
+      </div>
+      <div class="reset_btn">
+        <div class="reset_btn_inner">
+          <button class="btn_reset">Reset</button>
+        </div>
+      </div>
+      <div class="image_box_container">
+        <div class="image_search">
+          <div class="image_search_inner">
+            <div class="search">
+              <input
+                class="search_input"
+                type="text"
+                placeholder="Search here"
+              />
+              <button class="search_btn">Search</button>
+            </div>
+          </div>
+          <div class="image_search_text">
+            <h4 id="image_search_text"></h4>
+          </div>
+        </div>
+
+        <div class="image_box_inner">
+          <div class="image_box"></div>
+        </div>
+
+        <div class="image_pagination">
+          <div class="image_pagination_inner">
+            <div class="pagination"></div>
+          </div>
+          <div class="image_pagination_text"><h4>1 to 5 of 24</h4></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

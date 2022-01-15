@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="turn.min.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Don't edit or add pages here -->
+    <div id="flipbook">
+      <div style="background: #fff"></div>
+      <div class="el-1">
+        <h1>Insurance</h1>
+      </div>
+      <div class="el-2">
+        <h1>Media & Software</h1>
+      </div>
+      <div style="background: #fff"></div>
+    </div>
+    <!-- Don't edit or add pages here -->
+    <!-- <button class="btn-1 hidden">Back</button>
+    <button class="btn-2 hidden">Back</button> -->
+    <div class="page page-1">
+      <iframe class="screen frame-1" src="./pages/blogger/index.html"></iframe>
+    </div>
+    <div class="page page-2">
+      <iframe
+        class="screen frame-1"
+        src="./pages/zombiz-master/index.html"
+      ></iframe>
+    </div>
+    <div class="logo">
+      <img src="./img/stbenz-logo-white.png" />
+    </div>
+    <span class="centerLine"></span>
+
+    <!-- JQuery -->
+    <script type="text/javascript">
+      $("#flipbook").turn({
+        width: "100%",
+        height: "100%",
+        page: 3,
+        autoCenter: false,
+        when: {
+          turned: function (event, pages, pageObj) {
+            if (pages === 1) {
+              $(".btn-1").removeClass("hidden");
+              $("#flipbook").addClass("hidden");
+              $(".page-1").addClass("page-show");
+              $(".page-2").addClass("hidden");
+              $(".logo").addClass("hidden");
+              $(".centerLine").addClass("hidden");
+            }
+            if (pages === 4) {
+              $(".btn-2").removeClass("hidden");
+              $("#flipbook").addClass("hidden");
+              $(".page-1").addClass("hidden");
+              $(".page-2").addClass("page-show");
+              $(".logo").addClass("hidden");
+              $(".centerLine").addClass("hidden");
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

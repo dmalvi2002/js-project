@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+:root {
+  --p: #e23c52;
+  --s: #9b0daa;
+  --e: #f29a52;
+  --bs: 6px 1px 7px rgba(0, 0, 0, 0.3);
+  --g: linear-gradient(
+    124deg,
+    rgba(226, 60, 82, 1) 0%,
+    rgba(155, 13, 170, 1) 100%
+  );
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all 0.2s linear;
+}
+button:active {
+  transform: scale(0.9);
+}
+button.active {
+  background-color: var(--e) !important;
+}
+button.active:hover {
+  box-shadow: 0px 6px 15px 0 rgba(242, 154, 82, 0.7) !important;
+}
+.conatainer {
+  display: none;
+}
+.style_box {
+  width: 100%;
+  height: 80px;
+  background-image: var(--g);
+}
+.reset_btn {
+  width: 100%;
+  padding: 3rem;
+  padding-top: 0rem;
+}
+.reset_btn_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.reset_btn button {
+  padding: 0.5rem 1rem;
+  background-color: var(--p);
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 3px 12px 0 rgba(226, 60, 82, 0.3);
+}
+.filters_container {
+  width: 100%;
+  padding: 3rem;
+}
+.filters_inner {
+  width: 100%;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.filter_container {
+  margin-bottom: 1rem;
+}
+.filter_container:last-child {
+  margin-bottom: 0rem;
+}
+.fitler_title {
+  margin-bottom: 1rem;
+}
+.fitler_btns button {
+  padding: 0.5rem 1rem;
+  background-color: var(--s);
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-right: 1rem;
+}
+.fitler_btns button:last-child {
+  margin-right: 0rem;
+}
+.fitler_btns button:hover {
+  box-shadow: 0px 6px 15px 0 rgba(155, 13, 170, 0.7);
+}
+.image_box_container {
+  width: 100%;
+  padding: 3rem;
+  background-color: var(--e);
+}
+.image_search {
+  width: 100%;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.image_search_inner {
+  padding: 1rem 2rem;
+}
+.search {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.image_search_text {
+  padding: 0rem 2rem;
+  text-align: center;
+}
+.image_search_inner .search input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0rem 1rem;
+  font-size: 1rem;
+}
+.image_search_inner .search button {
+  background-color: var(--p);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  padding: 0rem 1rem;
+}
+.image_box_inner {
+  width: 100%;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 3rem;
+}
+.image_box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.image_card {
+  width: 200px;
+  position: relative;
+}
+.image_card .modal {
+  width: 100%;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: none;
+}
+.image_card .modal p {
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+.image_card .modal button {
+  padding: 0.3rem 0.8rem;
+  background-color: rgb(255, 47, 47);
+  color: white;
+  border-radius: 3px;
+}
+.image_card .image {
+  width: 100%;
+  margin-bottom: 0.8rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.image_card .image h4 {
+  padding: 0.5rem;
+  text-align: center;
+}
+.image_card .image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.image_card .modal_trigger button {
+  width: 200px;
+  min-height: 30px;
+  border-radius: 5px;
+  background-color: var(--p);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+.image_card .modal_trigger button:hover {
+  box-shadow: 0 3px 12px 0 rgba(226, 60, 82, 0.7);
+}
+.image_pagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.image_pagination_inner {
+  transform: translateY(-50%);
+}
+.image_pagination_inner button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  font-size: 1rem;
+  font-weight: 900;
+  margin-right: 0.5rem;
+  box-shadow: var(--bs);
+}
+.image_pagination_inner button i {
+  font-size: 1.2rem;
+}
+.image_pagination_inner button:last-child {
+  margin-right: 0rem;
+}
+.image_pagination_text h4 {
+  color: white;
+}
+
+/* Loader animation */
+.loader_container {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.loader {
+  height: 50px;
+  transform-origin: bottom center;
+  animation: rotate 2.5s linear infinite;
+}
+
+.circle {
+  display: inline-block;
+  background-color: var(--p);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: grow 1.5s linear infinite;
+  margin: -10px;
+}
+
+.circle:nth-child(2) {
+  background-color: var(--s);
+  animation-delay: 0.75s;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes grow {
+  50% {
+    transform: scale(1);
+  }
+}
+
+.pagination {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.filter_vendors_container {
+  display: none;
+}
