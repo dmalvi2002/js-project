@@ -1,4 +1,4 @@
-/* Images created by: https://unsplash.com/@pawel_czerwinski */
+@import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
 
 html {
   box-sizing: border-box;
@@ -11,19 +11,40 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  font-family: "Spartan", sans-serif;
   font-size: 12px;
 }
 
-
-
-.img-container {
-
-  position: relative;
-  top: -50px;
-  left: 50px;
+.player-container {
+  height: 500px;
+  width: 400px;
+  background: #b7a9fc;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
 }
 
+.img-container {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  top: -50px;
+  left: 42.5px;
+  border-radius: 30px;
+  border: double 10px transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(180deg, #00c9ff, #92fe9d);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+/* #FC466B #3F5EFB */
+
+.img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.5);
+}
 
 h2 {
   font-size: 25px;
@@ -74,25 +95,26 @@ h3 {
 
 .fas {
   font-size: 30px;
-  color: rgb(129, 129, 129);
+  color: #f56d5e;
   margin-right: 30px;
-
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s linear;
 }
 
-
-
-.main-button {
-  font-size: 40px;
-  position: relative;
-  top: 3px;
+.fas:active {
+  transform: scale(1.2);
 }
+/* Animated play pause button */
 
-/* Media Query: iPhone (Vertical) */
-@media screen and (max-width: 376px) {
-
-
+/* Media Query: All phone (Vertical) */
+@media screen and (max-width: 476px) {
+  .player-container {
+    width: 95vw;
+  }
+  /* It needs to be fixed! */
   .img-container {
-    left: 29px;
+    left: 7.5%;
   }
 
   h2 {
