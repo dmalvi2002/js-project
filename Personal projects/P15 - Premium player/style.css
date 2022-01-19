@@ -166,7 +166,7 @@ h3 {
   background-color: #f56d5e;
   border-radius: 50%;
   cursor: pointer;
-  transition: border 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .btn .bar {
   display: inline-block;
