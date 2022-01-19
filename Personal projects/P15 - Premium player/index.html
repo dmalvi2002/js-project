@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h3 class="title">*Still under development</h3>
     <div class="player-container">
       <!-- Song -->
       <div class="img-container">
@@ -30,9 +31,19 @@
       <!-- Controls -->
       <div class="player-controls">
         <i class="fas fa-backward" id="prev" title="Previous"></i>
-        <i class="fas fa-play main-button" id="play" title="Play"></i>
+        <!-- <i class="fas fa-play main-button" id="play" title="Play"></i> -->
+        <div class="btn fas play" id="play-btn">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+        </div>
         <i class="fas fa-forward" id="next" title="Next"></i>
       </div>
+    </div>
+    <div class="theme">
+      <span class="default active"></span>
+      <span class="pico-pink"></span>
+      <span class="minty-green"></span>
+      <span class="blue-horizon"></span>
     </div>
     <!-- Script -->
     <script src="script.js"></script>

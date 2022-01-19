@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Spartan&display=swap");
 
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 html {
   box-sizing: border-box;
 }
@@ -21,6 +25,7 @@ body {
   background: #b7a9fc;
   border-radius: 20px;
   box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.5s linear;
 }
 
 .img-container {
@@ -37,6 +42,14 @@ body {
   background-clip: content-box, border-box;
 }
 /* #FC466B #3F5EFB */
+
+.title {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+}
 
 .img-container img {
   height: 100%;
@@ -65,7 +78,7 @@ h3 {
   border-radius: 5px;
   cursor: pointer;
   margin: 40px 20px;
-  height: 4px;
+  height: 6px;
   width: 90%;
 }
 
@@ -87,9 +100,12 @@ h3 {
 /* Controls */
 .player-controls {
   position: relative;
-  top: -15px;
-  left: 120px;
+  top: -23px;
+  left: 107px;
   width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .fas {
@@ -104,10 +120,83 @@ h3 {
 .fas:active {
   transform: scale(1.2);
 }
-/* Animated play pause button */
 
+/* Theme icons */
+.theme {
+  height: 40px;
+  width: 280px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.theme span {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid rgba(0, 0, 0, 0);
+  transition: border-color 0.4s linear;
+}
+.theme span.active {
+  border: 3px solid #000;
+}
+.default {
+  background-color: #b7a9fc;
+}
+.pico-pink {
+  background-color: #ff9ff3;
+}
+.minty-green {
+  background-color: #26de81;
+}
+.blue-horizon {
+  background-color: #4b6584;
+}
+
+/* Animated play pause button */
+.btn {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #f56d5e;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border 0.1s ease-in-out;
+}
+.btn .bar {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 3px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: black;
+  transform-origin: center;
+  transition: transform 0.4s ease-in-out, background 0.1s ease-in-out;
+}
+.btn .bar-1 {
+  transform: translateX(20px) translateY(-5px) rotate(-55deg);
+}
+.btn .bar-2 {
+  transform: translateX(20px) translateY(5px) rotate(-125deg);
+}
+.btn.active .bar-1 {
+  transform: translateX(13.5px) translateY(0px) rotate(0deg);
+}
+.btn.active .bar-2 {
+  transform: translateX(24px) translateY(0px) rotate(0deg);
+}
 /* Media Query: All phone (Vertical) */
 @media screen and (max-width: 476px) {
+  body {
+    min-height: 90vh;
+  }
   .player-container {
     width: 95vw;
   }
@@ -127,5 +216,8 @@ h3 {
   .player-controls {
     top: -10px;
     left: 100px;
+  }
+  .title {
+    top: 1%;
   }
 }

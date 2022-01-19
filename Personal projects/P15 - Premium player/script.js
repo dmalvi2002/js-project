@@ -7,8 +7,15 @@ const progress = document.getElementById("progress");
 const currentTimeEl = document.getElementById("current-time");
 const durationEl = document.getElementById("duration");
 const prevBtn = document.getElementById("prev");
-const playBtn = document.getElementById("play");
+const playBtn = document.getElementById("play-btn");
 const nextBtn = document.getElementById("next");
+const icon = document.querySelectorAll(".player-controls .fas");
+const playerContainer = document.querySelector(".player-container");
+const theme = document.querySelector(".theme");
+const defaultTheme = document.querySelector(".default");
+const picoPink = document.querySelector(".pico-pink");
+const mintyGreen = document.querySelector(".minty-green");
+const blueHorizon = document.querySelector(".blue-horizon");
 
 // Music
 const songs = [
@@ -40,7 +47,6 @@ let isPlaying = false;
 // Play
 function playSong() {
   isPlaying = true;
-  playBtn.classList.replace("fa-play", "fa-pause");
   playBtn.setAttribute("title", "Pause");
   music.play();
 }
@@ -54,7 +60,10 @@ function pauseSong() {
 }
 
 // Play Event
-playBtn.addEventListener("click", () => (isPlaying ? pauseSong() : playSong()));
+playBtn.addEventListener("click", function () {
+  isPlaying ? pauseSong() : playSong();
+  checkPlayPause();
+});
 
 // Current song
 let songIndex = 0;
@@ -67,6 +76,9 @@ function nextSong() {
   }
   loadSong(songs[songIndex]);
   playSong();
+  if (!playBtn.classList.contains("active")) {
+    playBtn.classList.add("active");
+  }
 }
 
 // Previous song
@@ -77,6 +89,9 @@ function prevSong() {
   }
   loadSong(songs[songIndex]);
   playSong();
+  if (!playBtn.classList.contains("active")) {
+    playBtn.classList.add("active");
+  }
 }
 
 // Update DOM
@@ -92,12 +107,117 @@ function updateProgressBar() {
   if (isPlaying) {
     progress.style.width = `${(music.currentTime / music.duration) * 100}%`;
   }
+  let durationMins = Math.floor(music.duration / 60);
+  let durationSeconds = Math.floor(music.duration % 60);
+
+  if (durationSeconds < 10) {
+    durationSeconds = `0${durationSeconds}`;
+  }
+
+  // Delay switching duration to avoid NAN
+  if (durationSeconds) {
+    durationEl.textContent = `${durationMins}:${durationSeconds}`;
+  }
+  let currentMins = Math.floor(music.currentTime / 60);
+  let currentSeconds = Math.floor(music.currentTime % 60);
+
+  if (currentSeconds < 10) {
+    currentSeconds = `0${currentSeconds}`;
+  }
+
+  // Delay switching current to avoid NAN
+  if (currentSeconds) {
+    currentTimeEl.textContent = `${currentMins}:${currentSeconds}`;
+  }
 }
 
 // Loads first song
 loadSong(songs[songIndex]);
 
+// Set progress bar
+function setProgressBar(e) {
+  const width = this.clientWidth;
+  const clickX = e.offsetX;
+  music.currentTime = (clickX / width) * music.duration;
+  playSong();
+}
+
 // Event listeners
 nextBtn.addEventListener("click", nextSong);
 prevBtn.addEventListener("click", prevSong);
 music.addEventListener("timeupdate", updateProgressBar);
+progressContainer.addEventListener("click", setProgressBar);
+defaultTheme.addEventListener("click", function () {
+  [...theme.children].forEach((el) => {
+    el.classList.remove("active");
+  });
+  playerContainer.style.backgroundColor = "#b7a9fc";
+  icon.forEach((i) => {
+    i.style.color = "#f56d5e";
+  });
+  playBtn.style.backgroundColor = "#f56d5e";
+  [...playBtn.children].forEach((s) => {
+    s.style.backgroundColor = "#000";
+  });
+  this.classList.add("active");
+});
+picoPink.addEventListener("click", function () {
+  [...theme.children].forEach((el) => {
+    el.classList.remove("active");
+  });
+  playerContainer.style.backgroundColor = "#ff9ff3";
+  icon.forEach((i) => {
+    i.style.color = "#4b6584";
+  });
+  playBtn.style.backgroundColor = "#4b6584";
+  [...playBtn.children].forEach((s) => {
+    s.style.backgroundColor = "#fff";
+  });
+  this.classList.add("active");
+});
+mintyGreen.addEventListener("click", function () {
+  [...theme.children].forEach((el) => {
+    el.classList.remove("active");
+  });
+  playerContainer.style.backgroundColor = "#26de81";
+  icon.forEach((i) => {
+    i.style.color = "#000";
+  });
+  playBtn.style.backgroundColor = "#000";
+  [...playBtn.children].forEach((s) => {
+    s.style.backgroundColor = "#fff";
+  });
+  this.classList.add("active");
+});
+blueHorizon.addEventListener("click", function () {
+  [...theme.children].forEach((el) => {
+    el.classList.remove("active");
+  });
+  playerContainer.style.backgroundColor = "#4b6584";
+  icon.forEach((i) => {
+    i.style.color = "#f56d5e";
+  });
+  playBtn.style.backgroundColor = "#f56d5e";
+  [...playBtn.children].forEach((s) => {
+    s.style.backgroundColor = "#000";
+  });
+  this.classList.add("active");
+});
+// document.querySelector('body').addEventListener('click', '.btn', function(e){
+// 	e.preventDefault();
+// 	if ( document.querySelector(this).classList.contains('play') ) {
+// 		document.querySelector(this).removeClass('play');
+// 		document.querySelector(this).classList.add('pause');
+// 	} else {
+// 		document.querySelector(this).removeClass('pause');
+// 		document.querySelector(this).classList.add('play');
+// 	}
+// });
+
+function checkPlayPause() {
+  if (playBtn.classList.contains("active")) {
+    playBtn.classList.remove("active");
+  } else {
+    playBtn.classList.add("active");
+  }
+}
