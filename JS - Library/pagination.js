@@ -1,3 +1,10 @@
+//  HTML structure demo
+//  <div class="listingTable"></div>
+//  <button class="btn_prev">Prev</button>
+//  <div style="display: inline" class="btn-container"></div>
+//  <button class="btn_next">Next</button>
+//  page: <span class="page"></span>
+
 class PaginationMethod {
   constructor(
     container,
