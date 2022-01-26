@@ -80,6 +80,19 @@ function buildBookmarks() {
   });
 }
 
+// Delete bookmark
+function deleteBookmark(url) {
+  fetchBookmarks();
+  bookmarks.forEach((bookmark, i) => {
+    if (bookmark.url === url) {
+      bookmarks.splice(i, 1);
+      console.log(bookmarks);
+      localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+      fetchBookmarks();
+    }
+  });
+}
+
 // Fetch bookmarks
 function fetchBookmarks() {
   // Get bookmarks from local storage if available
@@ -96,19 +109,6 @@ function fetchBookmarks() {
     localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
   }
   buildBookmarks();
-}
-
-// Delete bookmark
-function deleteBookmark(url) {
-  fetchBookmarks();
-  bookmarks.forEach((bookmark, i) => {
-    if (bookmark.url === url) {
-      bookmarks.splice(i, 1);
-      console.log(bookmarks);
-      localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
-      fetchBookmarks();
-    }
-  });
 }
 
 // Handle data from Form
